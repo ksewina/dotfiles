@@ -107,10 +107,9 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias pywork="cd /home/ks/Projects/python/"
 alias v='vim'
 alias go-pimule="ssh -i /home/ks/.ssh/pimule-key pi@192.168.178.3"
-alias p2='python2'
+alias py2='python2'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
