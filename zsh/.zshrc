@@ -50,10 +50,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -110,7 +110,7 @@ export LANG=en_US.UTF-8
 alias v='vim'
 alias go-pimule="ssh -i /home/ks/.ssh/pimule-key pi@192.168.178.3"
 alias py2='python2'
-
+alias cdd='cd /home/$USER/dotfiles/'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/ks/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
