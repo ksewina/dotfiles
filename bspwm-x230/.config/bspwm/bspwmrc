@@ -1,18 +1,25 @@
 #! /bin/sh
 
-bspc monitor DP-1 -d  I II III IV V VI VII VIII IX X
-#bspc monitor LVDS-1 -d  I II III IV V VI VII VIII
-#bspc monitor HDMI-1 IX X
+#bspc monitor DP-1 -d  I II III IV V VI VII VIII IX X
+#laptop internal screen
+bspc monitor LVDS-1 -d  I II III IV V VI 
+#external hdmi
+bspc monitor HDMI-1 -d VII VIII IX X
+
+#start hotkey daemon
 sxhkd &
 
+
+#network manager applet
 #nm-applet &disown
+
+
 
 #picom &
 #dunst &
 #blueman-applet & disown
 
-#KDE Plasma Panel 
-
+#leaving space for KDE Plasma Panel 
 #bspc config bottom_padding 15
 
 bspc config border_width         4

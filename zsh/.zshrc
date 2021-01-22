@@ -77,11 +77,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colored-man-pages ansible colorize command-not-found copydir copyfile 
-kubectl)
+kubectl docker)
 
 source $ZSH/oh-my-zsh.sh
 #source /home/ks/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
+#hi
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
