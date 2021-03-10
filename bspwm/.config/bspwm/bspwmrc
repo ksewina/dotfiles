@@ -41,6 +41,7 @@ bspc rule -a Picture-in-Picture state=floating
 
 $HOME/.config/polybar/launch.sh
 
+feh --bg fill /home/ks/Pictures/bg.png
 nitrogen --restore &
 flameshot &disown
 mpd &disown
