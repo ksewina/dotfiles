@@ -1,0 +1,54 @@
+#The default profile sets some recommended settings
+profile=gpu-hq
+
+#The called API
+#Use "opengl" if you have compatibility issues.For displaying HDR content (not HDR -> SDR) "d3d11" is recommended (Windows only). 
+gpu-api=vulkan
+
+#Hardware decoding for whatever your CPU/GPU supports (e.g. 8bit h264 / 10bit h265)
+#Only should be used when your CPU/GPU are very old, else avoid using it
+#Use "auto-copy-safe" for the safest result in trade of better performance
+#You can manually try "d3d11va" / "dxva2-copy" on Windows, "vaapi" / "vaapi-copy" on Linux or
+#"nvdec" / "nvdec-copy" with an Nvidia GPUs
+hwdec=auto-safe
+
+#Don't close the player after finishing the video
+keep-open=yes
+
+#The last position of your video is saved when quitting mpv
+save-position-on-quit=yes
+
+#Start mpv with a % smaller resolution of your screen
+autofit=50%
+
+#Force seeking (if seeking doesn't work)
+force-seekable=yes
+
+#priority
+
+#Audio language priority
+alang=ja,jp,jpn,en,eng,de,deu,ger
+
+#Subtitle language priority
+slang=en,eng,de,deu,ger
+
+
+#Output format of screenshots
+screenshot-format=png
+
+#Same output bitdepth as the video
+#Set it "no" if you want to save disc space
+screenshot-high-bit-depth=yes
+
+#Compression of the PNG picture (1-9)
+#Higher value means better compression, but takes more time
+screenshot-png-compression=1
+
+#Quality of JPG pictures (0-100)
+#Higher value means better quality
+screenshot-jpeg-quality=100
+#Output directory
+screenshot-directory="/home/ks/media/pictures/screenshot"
+
+#Name format you want to save the pictures
+screenshot-template="%f-%wH.%wM.%wS.%wT-#%#00n"
