@@ -3,7 +3,9 @@ profile=gpu-hq
 
 #The called API
 #Use "opengl" if you have compatibility issues.For displaying HDR content (not HDR -> SDR) "d3d11" is recommended (Windows only). 
-gpu-api=vulkan
+gpu-api=auto
+# use vulkan (needs valid spirv-complier)
+#gpu-api=vulkan
 
 #Hardware decoding for whatever your CPU/GPU supports (e.g. 8bit h264 / 10bit h265)
 #Only should be used when your CPU/GPU are very old, else avoid using it
