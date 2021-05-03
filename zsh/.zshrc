@@ -102,10 +102,6 @@ export LANG=en_US.UTF-8
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-alias v='vim'
-alias go-pimule="ssh -i /home/ks/.ssh/pimule-key pi@192.168.178.3"
-alias py2='python2'
-alias cdd='cd /home/$USER/dotfiles/'
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/ks/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
