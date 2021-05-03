@@ -121,3 +121,7 @@ unset __conda_setup
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH="${PATH}:${HOME}/.krew/bin"
+
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
