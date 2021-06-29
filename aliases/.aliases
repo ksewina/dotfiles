@@ -1,3 +1,6 @@
 alias dc='cd'
 alias v='vim'
 alias py2='python2'
+alias kcx='kubectx'
+alias kcn='kubens'
+
