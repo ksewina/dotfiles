@@ -108,6 +108,5 @@ export LANG=en_US.UTF-8
 
 export PATH="${PATH}:${HOME}/.krew/bin"
 
-if [ -f ~/.aliases ]; then
-    source ~/.aliases
-fi
+#kubernetes configs
+export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
