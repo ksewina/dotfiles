@@ -110,3 +110,6 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 
 #kubernetes configs
 export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
+
+#enable direnv function (load vars in specific project folders and stuff)
+ eval "$(direnv hook zsh)"
