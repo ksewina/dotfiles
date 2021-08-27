@@ -89,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
+#better manual set this
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
@@ -112,4 +112,15 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
 
 #enable direnv function (load vars in specific project folders and stuff)
- eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
+
+#kubeone shell completion
+#source <(kubeone completion bash)
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source /Users/konstantinsewina/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+# source alias file in $HOME
+source $HOME/.aliases
