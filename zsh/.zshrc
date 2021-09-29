@@ -119,8 +119,5 @@ eval "$(direnv hook zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source /Users/konstantinsewina/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
 # source alias file in $HOME
 source $HOME/.aliases
