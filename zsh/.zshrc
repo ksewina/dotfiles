@@ -91,7 +91,8 @@ source $ZSH/oh-my-zsh.sh
 
 #better manual set this
 export LANG=en_US.UTF-8
-
+export VISUAL=vim
+export EDITOR=vim
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -121,3 +122,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # source alias file in $HOME
 source $HOME/.aliases
+
+
+#kubectl plugin manager
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
