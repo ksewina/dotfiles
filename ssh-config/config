@@ -1,0 +1,5 @@
+Host *
+    ServerAliveInterval 240
+    UseKeychain yes
+    ConnectionAttempts 5
+
