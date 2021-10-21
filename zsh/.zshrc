@@ -79,11 +79,11 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages ansible colorize copydir copyfile 
+plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting ansible colorize copydir copyfile 
 kubectl docker terraform helm)
 
 source $ZSH/oh-my-zsh.sh
-#source /home/ks/.oh-my-zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
 #hi
 # User configuration
 
@@ -93,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=vim
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -107,7 +108,7 @@ export EDITOR=vim
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="${PATH}:${HOME}/.krew/bin"
+#export PATH="${PATH}:${HOME}/.krew/bin"
 
 #kubernetes configs
 export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
