@@ -111,12 +111,8 @@ export EDITOR=vim
 #export PATH="${PATH}:${HOME}/.krew/bin"
 
 #kubernetes configs
-<<<<<<< HEAD
 export KUBECONFIG=$(find $HOME/.kube -type f -iname "*config*" | tr '\n\' ':' ) 
-=======
 #export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
-
->>>>>>> f16e089ef3264ad5c0513f4a5d3d990cdf8eca36
 
 #enable direnv function (load vars in specific project folders and stuff)
 eval "$(direnv hook zsh)"
