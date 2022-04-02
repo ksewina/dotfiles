@@ -27,9 +27,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -79,7 +76,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting ansible colorize copydir copyfile 
+plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting ansible colorize copypath copyfile 
 kubectl docker terraform helm)
 
 source $ZSH/oh-my-zsh.sh
@@ -111,7 +108,6 @@ export EDITOR=vim
 #export PATH="${PATH}:${HOME}/.krew/bin"
 
 #kubernetes configs
-export KUBECONFIG=$(find $HOME/.kube -type f -iname "*config*" | tr '\n\' ':' ) 
 #export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
 
 #enable direnv function (load vars in specific project folders and stuff)
@@ -124,7 +120,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # source alias file in $HOME
 source $HOME/.aliases
-
 
 #kubectl plugin manager
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
