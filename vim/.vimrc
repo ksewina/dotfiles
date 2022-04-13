@@ -4,8 +4,8 @@
 
 " For multi-byte character support (CJK support, for example):
 "set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
-
-
+syntax on
+set nocompatible    " not vi compatible
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
                     " PEP8 compliant
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
@@ -73,11 +73,49 @@ set background=dark " When set to "dark", Vim will try to use colors that look
                     " try to use colors that look good on a light background.
                     " Any other value is illegal.
 
-set mouse=a         " Enable the use of the mouse.
-
+set mouse+=a " enable mouse mode (scrolling, selection, etc)
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 filetype off
 
-" #i have to clean this shit
 
-syntax on
-set nowrap
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"
+Plugin 'tpope/vim-fugitive'
+Plugin 'dense-analysis/ale'
+Plugin 'scrooloose/nerdtree'
+
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line

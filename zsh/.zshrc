@@ -77,7 +77,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting ansible colorize copypath copyfile 
-kubectl docker terraform helm)
+kubectl docker terraform helm gcloud)
 
 source $ZSH/oh-my-zsh.sh
 
