@@ -8,3 +8,4 @@
 
 clear Lock
 keycode 66 = Escape NoSymbol Escape
+! keycode 108 = Alt_L (ISO_3_LAYER ALT_GR KEY)
