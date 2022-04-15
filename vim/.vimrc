@@ -93,6 +93,7 @@ Plugin 'dense-analysis/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
 Plugin 'morhetz/gruvbox'
+Plugin 'vim-airline/vim-airline'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
@@ -115,3 +116,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+
+" VimAirline config:
+let g:airline_powerline_fonts = 1
