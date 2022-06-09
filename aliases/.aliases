@@ -4,4 +4,5 @@ alias py2='python2'
 alias kcx='kubectx'
 alias kcn='kubens'
 alias mk='microk8s.kubectl'
+alias python='python3'
 
