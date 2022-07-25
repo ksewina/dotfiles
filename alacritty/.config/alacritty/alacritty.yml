@@ -3,11 +3,11 @@ env:
 
 font:
   normal:
-    family: Hack
+    family: MesloLGS NF
   bold:
-    family: Hack
+    family: MesloLGS NF
   italic:
-    family: Hack
+    family: MesloLGS NF
 
 
   size: 10.0
