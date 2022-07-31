@@ -122,4 +122,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source $HOME/.aliases
 
 #kubectl plugin manager
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+#export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

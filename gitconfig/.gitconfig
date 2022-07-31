@@ -5,3 +5,8 @@
 # Please adapt and uncomment the following lines:
 #	name = ks
 #	email = konstantin.sewina@gmail.com
+
+[pull]
+    rebase = true
+[init]
+    defaultBranch = master

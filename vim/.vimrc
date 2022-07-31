@@ -1,4 +1,4 @@
-" .vimrc
+"  .vimrc
 "
 " See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
 
@@ -93,10 +93,9 @@ Plugin 'dense-analysis/ale'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
+Plugin 'hashivim/vim-terraform'
 "Plugin 'neoclide/coc.nvim'
-Plugin 'andrewstuart/vim-kubernetes'
 " Track the engine.
-Plugin 'SirVer/ultisnips'
 "
 " " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
