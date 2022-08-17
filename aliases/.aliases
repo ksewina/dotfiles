@@ -5,4 +5,4 @@ alias kcx='kubectx'
 alias kcn='kubens'
 alias mk='microk8s.kubectl'
 alias python='python3'
-
+alias jumpk='export KUBECONFIG=$HOME/kubeconfig && kind create cluster --config $HOME/.kube/kind_cluster_setup'
