@@ -91,28 +91,20 @@ export LANG=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=vim
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+#Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#export PATH="${PATH}:${HOME}/.krew/bin"
-
-#kubernetes configs
-#export KUBECONFIG="$(find $HOME/.kube/config.d -type f -exec printf '%s:' '{}' +)$HOME/.kube/config"
-
 #enable direnv function (load vars in specific project folders and stuff)
 eval "$(direnv hook zsh)"
-
+#flux completions
+command -v flux >/dev/null && . <(flux completion zsh)
 #kubeone shell completion
 #source <(kubeone completion bash)
 

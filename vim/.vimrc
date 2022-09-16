@@ -6,9 +6,9 @@
 "set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
 syntax on
 set nocompatible    " not vi compatible
-set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
+set tabstop=2       " Number of spaces that a <Tab> in the file counts for.
                     " PEP8 compliant
-set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
+set shiftwidth=2    " Number of spaces to use for each step of (auto)indent.
                     " PEP 8 compliant
 set expandtab       " Use the appropriate number of spaces to insert a <Tab>.
                     " Spaces are used in indents with the '>' and '<' commands
@@ -19,7 +19,7 @@ set smarttab        " When on, a <Tab> in front of a line inserts blanks
                     " according to 'shiftwidth'. 'tabstop' is used in other
                     " places. A <BS> will delete a 'shiftwidth' worth of space
                     " at the start of the line.
-
+set clipboard=unnamedplus
 set showcmd         " Show (partial) command in status line.
 
 set number          " Show line numbers.
