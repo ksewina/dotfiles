@@ -1,14 +1,15 @@
-env:
-  TERM: alacritty
+live_config_reload: true
 
+scrolling:
+  history: 10000
+  multiplier: 10
 font:
   normal:
-    family: MesloLGS NF
+    family: MesloLGS Nerd Font 
   bold:
-    family: MesloLGS NF
+    family: MesloLGS Nerd Font 
   italic:
-    family: MesloLGS NF
-
+    family: MesloLGS Nerd Font
 
   size: 13.0
 

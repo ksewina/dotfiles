@@ -1,0 +1,180 @@
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$kubernetes\
+$helm\
+$docker\
+$gcloud\
+$go\
+$aws\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+add_newline = true
+
+#https://github.com/morhetz/gruvbox
+palette = "gruvbox-dark"
+
+[character]
+format = "$symbol "
+success_symbol = "[ ](bold green) "
+error_symbol = "[ ](bold red) "
+
+[palettes.gruvbox-dark]
+red = "#CC241D"
+green = "#98971A"
+yellow = "#D79921"
+blue = "#458588"
+purple = "#B16286"
+aqua = "#689D6A" #green
+orange = "#D65D0E"
+gray = "#A89984"
+bg = "#282828"
+bg0_h = "#1D2021"
+bg1 = "#3C3836"
+bg2 = "#504945"
+bg3 = "#665C54"
+bg4 = "#7C6F64"
+
+[palettes.tokyo-night]
+background = "#1a1b26"
+foreground = "#a9b1d6"
+black = "#32344a"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#ad8ee6"
+cyan = "#449dab"
+white = "#787c99"
+bright-black = "#444b6a"
+bright-red = "#ff7a93"
+bright-green = "#b9f27c"
+bright-yellow = "#ff9e64"
+bright-blue = "#7da6ff"
+bright-magenta = "#bb9af7"
+bright-cyan = "#0db9d7"
+bright-white = "#acb0d0"
+
+[git_status]
+style = "aqua"
+
+[kubernetes]
+disabled = false
+symbol = "ﴱ "
+format = '[$symbol$context( \($namespace\))]($style) '
+style = "blue"
+
+[kubernetes.context_aliases]
+"core-stg.*" = "STG"
+"core-prd.*" = "PRD"
+
+[helm]
+disabled = false
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "gray"
+
+[cmd_duration]
+
+[aws]
+disabled = false
+symbol = "  "
+
+[buf]
+disabled = true
+symbol = " "
+
+[conda]
+disabled = true
+symbol = " "
+
+[directory]
+truncation_length = 6
+disabled = false
+style = "#D79921"
+read_only = " "
+read_only_style = "#CC241D"
+
+[docker_context]
+symbol = " "
+
+[elixir]
+disabled = true
+symbol = " "
+
+[elm]
+disabled = true
+symbol = " "
+
+[fill]
+symbol = " "
+style = "#282828"
+[git_branch]
+symbol = " "
+[gcloud]
+disabled = true
+[golang]
+symbol = " "
+
+[haskell]
+disabled = true
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+disabled = true
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "

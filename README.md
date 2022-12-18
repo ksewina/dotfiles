@@ -1,3 +1,5 @@
 # GNU Stow managed dotfiles
 
-useful for keeping track of configuration files
+https://www.gnu.org/software/stow://www.gnu.org/software/stow/
+
+track configuration files
