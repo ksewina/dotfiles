@@ -7,7 +7,7 @@ alias jumpk='export KUBECONFIG=$HOME/kubeconfig && kind create cluster --config 
 
 # This command is used a LOT both below and in daily life
 alias k=kubectl
-
+alias kd='kubectl describe'
 # Aliases for kubectx util
 alias kcx='kubectx'
 alias kcn='kubens'

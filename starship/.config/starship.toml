@@ -73,6 +73,7 @@ style = "blue"
 [kubernetes.context_aliases]
 "core-stg.*" = "STG"
 "core-prd.*" = "PRD"
+"core-dev.*" = "DEV"
 
 [helm]
 disabled = false
