@@ -15,7 +15,7 @@ font:
 
 window:
   opacity: 0.9
-  decorations: "none"
+  decorations: "full"
   #window:
   #  decorations: "none"
 # https://github.com/alacritty/alacritty/wiki/Color-schemes#gruvbox
