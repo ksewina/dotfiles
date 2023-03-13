@@ -1,10 +1,33 @@
-alias dc='cd'
-alias v='vim'
+#core
+
+alias v='nvim'
+alias vim='nvim'
 alias py2='python2'
 alias mk='microk8s.kubectl'
 alias python='python3'
 alias jumpk='export KUBECONFIG=$HOME/kubeconfig && kind create cluster --config $HOME/.kube/kind_cluster_setup'
 
+#basic cd controls
+
+alias dc='cd'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+#grep with colors
+
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+#make parent dirs on demand
+
+alias mkdir='mkdir -pv'
+
+
+# KUBERNETES
+#
 # This command is used a LOT both below and in daily life
 alias k=kubectl
 alias kd='kubectl describe'
