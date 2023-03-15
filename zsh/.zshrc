@@ -15,6 +15,12 @@ bindkey -e
 autoload -Uz compinit
 compinit
 
+#variables
+
+export BROWSER="firefox"
+export EDITOR="nvim"
+export GOPATH="$HOME/go"
+
 # Use keycodes (generated via zkbd) if present, otherwise fallback on
 # values from terminfo
 if [[ -r ${ZDOTDIR:-$HOME}/.zkbd/${TERM}-${VENDOR} ]] ; then
@@ -76,7 +82,7 @@ source <(flux completion zsh)
 #starship prompt
 eval "$(starship init zsh)"
 
-#enable auto suggestions
+#enable auto suggestions for brew
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
