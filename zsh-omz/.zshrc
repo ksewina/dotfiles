@@ -5,27 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-#
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-#jupyter lab bin
-PATH="$HOME/.local/bin:$PATH"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -76,20 +58,18 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting ansible colorize copypath copyfile 
+plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting copypath copyfile 
 kubectl docker terraform helm gcloud)
 
 source $ZSH/oh-my-zsh.sh
 
-#hi
-# User configuration
+# source alias file in $HOME
+source $HOME/.aliases
 
-# export MANPATH="/usr/local/man:$MANPATH"
 
 #better manual set this
 export LANG=en_US.UTF-8
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
 
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -105,13 +85,3 @@ fi
 eval "$(direnv hook zsh)"
 #flux completions
 command -v flux >/dev/null && . <(flux completion zsh)
-#kubeone shell completion
-#source <(kubeone completion bash)
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# source alias file in $HOME
-source $HOME/.aliases
-
-#kubectl plugin manager
-#export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
