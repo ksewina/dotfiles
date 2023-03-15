@@ -32,9 +32,10 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-
+  -- color schemes
   use 'folke/tokyonight.nvim' -- color scheme for cool people
   use 'luisiacc/gruvbox-baby' -- gruvbox dark respecting mohertz colors
+  use 'Mofiqul/dracula.nvim'
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
