@@ -28,7 +28,8 @@ source $HOME/.aliases
 export LANG=en_US.UTF-8
 export VISUAL=nvim
 export BROWSER=firefox
-export XDG_CONFIG_HOME=$HOME
+export XDG_CONFIG_HOME=$HOME/.config/
+
 
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
