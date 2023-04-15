@@ -1,0 +1,7 @@
+plugin/packer_compiled.lua
+luac.out
+
+# luarocks build files
+*.src.rock
+*.zip
+*.tar.gz

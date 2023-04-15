@@ -1,0 +1,2 @@
+require("ksewina")
+--print("hello")
