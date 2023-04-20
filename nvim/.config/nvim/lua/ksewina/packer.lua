@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
   use("nvim-lua/plenary.nvim") 
 
   -- color scheme
-  use 'Mofiqul/dracula.nvim'
+  use("Mofiqul/dracula.nvim")
 
   -- nvim-tree
   use("nvim-tree/nvim-tree.lua")
@@ -20,6 +20,13 @@ return require('packer').startup(function(use)
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+
+  use("mbbill/undotree")
+
+  use("tpope/vim-fugitive")
+
+  --- LSP Setup
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v1.x',

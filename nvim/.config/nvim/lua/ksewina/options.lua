@@ -24,6 +24,8 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- i like colors
 opt.termguicolors = true
+vim.api.nvim_set_hl(0, "Normal", { bg = "none"})
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none"})
 
 -- undo retention for DAYS
 
@@ -35,4 +37,5 @@ opt.undofile = true
 
 opt.iskeyword:append("-") -- consider string-string as whole word
 
-
+opt.scrolloff = 8
+opt.signcolumn = "yes"
