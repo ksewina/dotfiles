@@ -14,7 +14,7 @@ font:
   size: 13.0
 
 window:
-  opacity: 0.9
+  opacity: 0.95
   decorations: "full"
   #window:
   #  decorations: "none"

@@ -1,7 +1,0 @@
-kind: Pod
-version: v1
-metadata:
-  name: new
-spec:
-  containers:
-
