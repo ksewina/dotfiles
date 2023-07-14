@@ -1,8 +1,0 @@
-# This is Git's per-user configuration file.
-[user]
-	name = ksewina
-	email = 17175236+ksewina@users.noreply.github.com
-[pull]
-    rebase = true
-[init]
-    defaultBranch = master
