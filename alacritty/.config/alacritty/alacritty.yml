@@ -11,7 +11,7 @@ font:
   italic:
     family: MesloLGS Nerd Font
 
-  size: 13.0
+  size: 14.0
 
 window:
   opacity: 0.95

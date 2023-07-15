@@ -17,12 +17,16 @@ xmodmap -e "keycode 66 = Escape"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting copypath copyfile kubectl docker terraform helm gcloud alias-finder argocd fluxcd vault)
+plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd vault)
 
 source $ZSH/oh-my-zsh.sh
 
 # source alias file in $HOME
 source $HOME/.aliases
+
+if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
+    fortune | cowsay
+fi
 
 
 #better manual set this
@@ -31,6 +35,8 @@ export VISUAL=nvim
 export BROWSER=firefox
 export XDG_CONFIG_HOME=$HOME/.config/
 
+#GO
+export GOPATH=$HOME/go
 
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
