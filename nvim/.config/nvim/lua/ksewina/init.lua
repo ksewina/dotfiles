@@ -8,7 +8,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 
-print("test beep boop")
+--print("test beep boop")
 
 
 
