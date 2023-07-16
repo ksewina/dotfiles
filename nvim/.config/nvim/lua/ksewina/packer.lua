@@ -7,6 +7,9 @@ return require('packer').startup(function(use)
   -- lua functions that many plugins use
   use("nvim-lua/plenary.nvim") 
 
+  --- tmux integrations
+  use("christoomey/vim-tmux-navigator")
+
   -- color scheme
   use("Mofiqul/dracula.nvim")
 
@@ -25,6 +28,9 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
 
   use("tpope/vim-fugitive")
+
+  -- vim game
+  use("ThePrimeagen/vim-be-good")
 
   --- LSP Setup
   use {
@@ -48,6 +54,20 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  }
+  }
+
+    -- Lua
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
   }
 
 end)
