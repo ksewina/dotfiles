@@ -22,3 +22,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
+
+--less confusing when jumping, centers view on match
+--
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
