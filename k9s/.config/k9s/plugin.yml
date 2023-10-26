@@ -3,16 +3,6 @@
 # Shift-T (with confirmation) to toggle helm releases or kustomizations suspend and resume
 # Shift-R (no confirmation) to reconcile a git source or a helm release or a kustomization
 plugin:
-  dive:
-    shortCut: d
-    confirm: false
-    description: "Dive image"
-    scopes:
-      - containers
-    command: dive
-    background: false
-    args:
-      - $COL-IMAGE
   toggle-helmrelease:
     shortCut: Shift-T
     confirm: true
