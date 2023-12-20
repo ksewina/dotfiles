@@ -38,6 +38,8 @@ export XDG_CONFIG_HOME=$HOME/.config/
 #GO
 export GOPATH=$HOME/go
 
+#KREW (kubectl plugin manager)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
