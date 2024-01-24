@@ -32,6 +32,7 @@ fi
 #better manual set this
 export LANG=en_US.UTF-8
 export VISUAL=nvim
+export PAGER=less
 export BROWSER=firefox
 export XDG_CONFIG_HOME=$HOME/.config/
 
