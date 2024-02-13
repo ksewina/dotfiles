@@ -118,5 +118,5 @@ history = 10000
 multiplier = 10
 
 [window]
-decorations = "none"
+decorations = "full"
 opacity = 0.95
