@@ -10,6 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
+POWERLEVEL9K_INSTANT_PROMPT="quiet"
+
 
 #xmodmap -e "keycode 66 = Escape"
 # Which plugins would you like to load?
@@ -17,7 +19,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd vault)
+plugins=(git fzf colored-man-pages zsh-autosuggestions copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd vault)
 
 source $ZSH/oh-my-zsh.sh
 
