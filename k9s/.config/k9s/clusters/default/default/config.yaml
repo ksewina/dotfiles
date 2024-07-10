@@ -1,0 +1,12 @@
+k9s:
+  cluster: default
+  namespace:
+    active: paperless-ngx
+    lockFavorites: false
+    favorites:
+    - default
+  view:
+    active: po
+  featureGates:
+    nodeShell: false
+  portForwardAddress: localhost

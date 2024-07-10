@@ -1,11 +1,12 @@
 #core
 
+alias z="zsh" #makes sourcing easy for shared fzf history on tmux sessions
 alias v='nvim'
 alias vim='nvim'
 alias py2='python2'
 alias mk='microk8s.kubectl'
 alias python='python3'
-alias jumpk='export KUBECONFIG=$HOME/kubeconfig && kind create cluster --config $HOME/.kube/kind_cluster_setup'
+alias jumpk='export KUBECONFIG=$HOME/kindconfig && kind create cluster --config $HOME/.kube/kind_cluster_setup'
 
 #basic cd controls
 
@@ -25,6 +26,13 @@ alias fgrep='fgrep --color=auto'
 
 alias mkdir='mkdir -pv'
 
+#lazygit even lazier
+
+
+
+
+
+# 
 
 # KUBERNETES
 #

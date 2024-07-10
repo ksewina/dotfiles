@@ -1,0 +1,14 @@
+[user]
+  name = ksewina
+  email = 17175236+ksewina@users.noreply.github.com
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	pager = less
+[web]
+	browser = firefox
+[color]
+	ui = true
+

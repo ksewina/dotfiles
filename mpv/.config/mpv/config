@@ -26,10 +26,19 @@ autofit=50%
 #Force seeking (if seeking doesn't work)
 force-seekable=yes
 
+#large RAM cache
+cache=yes
+# cache for everything, even local files
+cache=8192
+
+#demuxer cache
+demuxer-max-bytes=500M
+demuxer-max-back-bytes=100M
+
 #priority
 
 #Audio language priority
-alang=ja,jp,jpn,en,eng,de,deu,ger
+alang=en,eng,ja,jp,jpn,de,deu,ger
 
 #Subtitle language priority
 slang=en,eng,de,deu,ger
