@@ -19,7 +19,7 @@ POWERLEVEL9K_INSTANT_PROMPT="quiet"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf colored-man-pages zsh-autosuggestions copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd vault)
+plugins=(git fzf colored-man-pages zsh-autosuggestions copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,7 +31,7 @@ if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
 fi
 
 
-#better manual set this
+#better manually set this
 export LANG=en_US.UTF-8
 export VISUAL=nvim
 export PAGER=less
@@ -47,7 +47,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 
 #GO
 export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH""
 
 #KREW (kubectl plugin manager)
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
