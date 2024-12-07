@@ -12,6 +12,24 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 COMPLETION_WAITING_DOTS="true"
 POWERLEVEL9K_INSTANT_PROMPT="quiet"
 
+# Function to add multiple paths to PATH
+path_add() {
+    for dir in "$@"; do
+        if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
+            export PATH="$dir:$PATH"
+            echo "Added $dir to PATH"
+        fi
+    done
+}
+
+# Usage examples:
+# Add a single path
+#path_add "$HOME/go/bin"
+
+
+# Add multiple paths at once
+path_add "$HOME/.local/bin" "$HOME/go/bin"
+
 
 #xmodmap -e "keycode 66 = Escape"
 # Which plugins would you like to load?
