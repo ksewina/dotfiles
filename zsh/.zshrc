@@ -47,7 +47,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 
 #GO
 export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH""
+export PATH="$GOPATH/bin:$PATH"
 
 #KREW (kubectl plugin manager)
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"

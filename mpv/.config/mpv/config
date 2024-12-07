@@ -26,10 +26,8 @@ autofit=50%
 #Force seeking (if seeking doesn't work)
 force-seekable=yes
 
-#large RAM cache
-cache=yes
 # cache for everything, even local files
-cache=8192
+cache=yes
 
 #demuxer cache
 demuxer-max-bytes=500M
@@ -58,8 +56,6 @@ screenshot-png-compression=1
 #Quality of JPG pictures (0-100)
 #Higher value means better quality
 screenshot-jpeg-quality=100
-#Output directory
-screenshot-directory="/home/ks/media/pictures/screenshot"
 
 #Name format you want to save the pictures
 screenshot-template="%f-%wH.%wM.%wS.%wT-#%#00n"
