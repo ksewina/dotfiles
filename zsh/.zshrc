@@ -17,7 +17,7 @@ path_add() {
     for dir in "$@"; do
         if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
             export PATH="$dir:$PATH"
-            echo "Added $dir to PATH"
+            #echo "Added $dir to PATH"
         fi
     done
 }
@@ -28,26 +28,23 @@ path_add() {
 
 
 # Add multiple paths at once
-path_add "$HOME/.local/bin" "$HOME/go/bin"
+path_add "$HOME/.local/bin" "$HOME/go/bin" "$HOME/.krew/bin"
+# enabled:
+# - lunarvim
+# - go
+# - krew (kubectl plugin manager)
+
 
 
 #xmodmap -e "keycode 66 = Escape"
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+#OMZ plugins
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf colored-man-pages zsh-autosuggestions copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd)
+plugins=(git ansible fzf colored-man-pages zsh-autosuggestions copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd)
 
 source $ZSH/oh-my-zsh.sh
 
 # source alias file in $HOME
 source $HOME/.aliases
-
-if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
-    fortune | cowsay
-fi
-
 
 #better manually set this
 export LANG=en_US.UTF-8
@@ -57,18 +54,10 @@ export BROWSER=firefox
 
 #XDG Variables https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 #this is respected by a lot of apps linux/macOS
-
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
-
-#GO
-export GOPATH=$HOME/go
-export PATH="$GOPATH/bin:$PATH"
-
-#KREW (kubectl plugin manager)
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -81,4 +70,3 @@ fi
 
 #enable direnv function (load vars in specific project folders and stuff)
 eval "$(direnv hook zsh)"
-
