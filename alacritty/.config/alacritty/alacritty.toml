@@ -47,11 +47,11 @@
 [font]
   size = 15.0
   [font.bold]
-    family = "MesloLGS Nerd Font"
+    family = "JetBrainsMono Nerd Font"
   [font.italic]
-    family = "MesloLGS Nerd Font"
+    family = "JetBrainsMono Nerd Font"
   [font.normal]
-    family = "MesloLGS Nerd Font"
+    family = "JetBrainsMono Nerd Font"
 
 [keyboard]
   bindings = [
