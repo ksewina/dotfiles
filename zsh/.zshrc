@@ -28,7 +28,7 @@ path_add() {
 
 
 # Add multiple paths at once
-path_add "$HOME/.local/bin" "$HOME/go/bin" "$HOME/.krew/bin"
+path_add "$HOME/.local/bin" "$HOME/go/bin" "$HOME/.krew/bin" "/nix/var/nix/profiles/default/bin"
 # enabled:
 # - lunarvim
 # - go
