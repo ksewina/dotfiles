@@ -21,7 +21,7 @@ keep-open=yes
 save-position-on-quit=yes
 
 #Start mpv with a % smaller resolution of your screen
-autofit=50%
+autofit-larger=80%x70%
 
 #Force seeking (if seeking doesn't work)
 force-seekable=yes
