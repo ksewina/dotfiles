@@ -1,6 +1,6 @@
 
 alias z='zsh' 
-alias v='nvim'
+alias v='lvim'
 alias lv='lvim'
 alias python='python3'
 alias lg='lazygit'
