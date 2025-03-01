@@ -1,3 +1,4 @@
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
 [user]
   name = ksewina
   email = 17175236+ksewina@users.noreply.github.com
@@ -5,10 +6,51 @@
 	defaultBranch = main
 [core]
 	editor = nvim
-	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	pager = less
-[web]
-	browser = firefox
+	# global ignore file
+	excludefile = ~/.gitignore
 [color]
 	ui = true
-
+[column]
+	ui = auto
+[branch]
+	#most recent commit date (default alpha order)
+	sort = -committerdate
+[tag] 
+	#sort version numbers by integer values (default alpha order, which is stupid)
+	sort = version:refname
+[diff]
+	# (default is myers)
+	algorithm = histogram
+	# moved code, different color then add/removed lines
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true	
+[push]
+	default = simple
+	# no remote setup, will create it automatically
+	autoSetupRemote = true
+	# push all local tags that are not present on remote	
+	followTags = true
+[fetch] 
+	#potentially dangerous, auto prune things that are not on the server anymore, even if you have a local copy
+	prune = true
+	pruneTags = true
+	all = true
+[help]  
+	autocororect = prompt
+[commit]
+	# diffs visible when typing commits, so nice
+	verbose = true
+[rerere]
+	# conflict rebases
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[merge]
+	# zealous diff3 (default diff3)
+	# Adds the |||||| block to see block before it was changed
+	conflictstyle = zdiff3

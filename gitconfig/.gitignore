@@ -1,0 +1,9 @@
+# Mac
+.DS_Store
+# Windows
+Thumbs.db
+#
+*.swp*
+*.lock*
+.direnv
+.vscode/
