@@ -39,7 +39,7 @@ path_add "$HOME/.local/bin" "$HOME/go/bin" "$HOME/.krew/bin" "/nix/var/nix/profi
 #xmodmap -e "keycode 66 = Escape"
 #OMZ plugins
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ansible fzf colored-man-pages zsh-autosuggestions copypath copyfile kubectl docker terraform helm gcloud fancy-ctrl-z alias-finder argocd fluxcd)
+plugins=(git ansible fzf colored-man-pages kubectl docker terraform helm alias-finder fluxcd)
 
 source $ZSH/oh-my-zsh.sh
 
