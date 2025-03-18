@@ -1,72 +1,104 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+HISTSIZE=5000
+SAVEHIST=${HISTSIZE}
+HISTFILE=~/.zsh_history
+HISTDUP=erase
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-POWERLEVEL9K_INSTANT_PROMPT="quiet"
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Function to add multiple paths to PATH
-path_add() {
-    for dir in "$@"; do
-        if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
-            export PATH="$dir:$PATH"
-            #echo "Added $dir to PATH"
-        fi
-    done
-}
+# Enable colors
+autoload -U colors && colors
 
-# Usage examples:
-# Add a single path
-#path_add "$HOME/go/bin"
+#Changing Directories
+setopt auto_cd # If command is a directory path, cd to it.
+setopt auto_pushd # cd is really pushd.
+setopt chase_links # Resolve symbolic links to their true location.
+setopt pushd_ignore_dups # Don't put duplicates on the directory stack.
+setopt pushd_minus # Make `cd -1` go to the previous directory, etc.
+setopt pushd_to_home # pushd with no arguments goes home, like cd.
 
+# Completion
+# setopt auto_param_keys # Intelligently add a space after variable completion.
+# setopt auto_param_slash # Intelligently add a slash after directory completion.
+setopt auto_remove_slash # Remove trailing slash if next char is a word delim.
+setopt complete_aliases # Treat aliases as distinct commands.
+setopt complete_in_word # Completions happen at the cursor's location.
+setopt glob_complete # Tab completion expands globs.
+setopt hash_list_all # Ensure the command path is hashed before completion.
+setopt menu_complete # Expand first match and use the interactive menu.
 
-# Add multiple paths at once
-path_add "$HOME/.local/bin" "$HOME/go/bin" "$HOME/.krew/bin" "/nix/var/nix/profiles/default/bin"
-# enabled:
-# - lunarvim
-# - go
-# - krew (kubectl plugin manager)
+# Expansion and Globbing
+setopt glob # Enable globbing (i.e. the use of the '*' operator).
+setopt extended_glob # Use additional glob operators ('#', '~', and '^').
+setopt no_glob_dots # Require a leading '.' to be matched explicitly.
+setopt mark_dirs # Mark directories resulting from globs with trailing slashes.
+# setopt nomatch # If a glob fails, the command isn't executed.
 
+# History
+setopt hist_ignore_all_dups # Ignore all duplicates when writing history.
+setopt hist_ignore_space # Ignore commands that begin with spaces.
+setopt inc_append_history # Write commands to history file as soon as possible.
 
+# Input/Output
+setopt append_create # Allow '>>' to create a file.
+setopt no_clobber # Prevent `>` from clobbering files. Use `>!` to clobber.
+setopt correct # Offer to correct the spelling of commands.
+setopt interactive_comments # Allow comments in interactive shells.
+setopt short_loops # Enable short loop syntax: `for <var> in <seq>; <command>`.
 
-#xmodmap -e "keycode 66 = Escape"
-#OMZ plugins
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git ansible fzf colored-man-pages kubectl docker terraform helm alias-finder fluxcd)
+# Job Control
+setopt auto_continue # When suspended jobs are disowned, resume them in the bg.
+setopt auto_resume # Single-word simple commands are candidates for resumption.
+setopt bg_nice # Run background jobs at lower priority.
+setopt check_jobs # Warn about suspended jobs on exit.
+setopt check_running_jobs # Warn about background jobs on exit.
 
-source $ZSH/oh-my-zsh.sh
+# Scripts and Functions
+setopt local_loops # Do not allow `break` etc. outside of loops.
 
-# source alias file in $HOME
-source $HOME/.aliases
+# ZLE
+# setopt zle # Use ZLE.
+# setopt no_beep # Do not beep on ZLE errors (most beeps).
 
-#better manually set this
-export LANG=en_US.UTF-8
-export VISUAL=nvim
-export PAGER=less
-export BROWSER=firefox
+autoload -Uz compinit
+compinit -u
 
-#XDG Variables https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-#this is respected by a lot of apps linux/macOS
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
+zstyle ':completion:*' use-cache true # Cache completion to `${ZDOTDIR}/.zcompcache`.
+zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys.
 
-#Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+bindkey -v
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Load vcs_info for git branch display
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
-#enable direnv function (load vars in specific project folders and stuff)
-eval "$(direnv hook zsh)"
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' %F{green}(%b)%f'
+zstyle ':vcs_info:*' enable git
+
+# Set up the prompt
+setopt PROMPT_SUBST
+PROMPT='%F{magenta}%~%f${vcs_info_msg_0_} %F{yellow}%#%f '
+RPROMPT='%T'
+
+# Better completion system
+zstyle ':completion:*' menu select
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+# FZF
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+export FZF_CTRL_R_OPTS="--sort --exact"
+
+# Source aliases if file exists
+[[ -f $HOME/.aliases ]] && source $HOME/.aliases

@@ -6,7 +6,6 @@ live_config_reload = true
 
 [window]
   decorations = "full"
-  opacity = 0.95
   option_as_alt = "Both"
 
 [selection]
