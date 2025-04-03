@@ -3,6 +3,8 @@ SAVEHIST=${HISTSIZE}
 HISTFILE=~/.zsh_history
 HISTDUP=erase
 
+#want to see all options available:
+#emulate -lLR zsh
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
@@ -99,6 +101,9 @@ source /usr/share/fzf/completion.zsh
 
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_CTRL_R_OPTS="--sort --exact"
+
+#binaries
+export PATH="$PATH:$HOME/.local/bin"
 
 # Source aliases if file exists
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases

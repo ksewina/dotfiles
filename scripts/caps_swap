@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Swapping the escape and capslock key because I like it.
-sudo localectl set-x11-keymap us "" "" caps:swapescape
+sudo localectl set-x11-keymap us "" "" caps:escape
 echo "Need to reboot to take effect"
 exit 0
 
