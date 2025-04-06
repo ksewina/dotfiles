@@ -51,8 +51,8 @@
 	# zealous diff3 (default diff3)
 	# Adds the |||||| block to see block before it was changed
 	conflictstyle = zdiff3
-[user]
-	email = 17175236+ksewina@users.noreply.github.com
-	name = ksewina
 [credential]
-	credentialStore = plaintext
+	credentialStore = gpg
+	helper = /usr/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
