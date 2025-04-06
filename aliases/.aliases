@@ -5,9 +5,9 @@ alias lv='lvim'
 alias python='python3'
 alias lg='lazygit'
 
-alias ls='ls --human-readable --classify --group-directories-first --color=auto'
-alias ll='ls -alt'
-alias la='ls --almost-all'
+#alias ls='ls --human-readable --classify --group-directories-first --color=auto'
+#alias ll='ls -alt'
+#alias la='ls --almost-all'
 
 #basic cd controls
 

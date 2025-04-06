@@ -1,7 +1,4 @@
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/
-[user]
-  name = ksewina
-  email = 17175236+ksewina@users.noreply.github.com
 [init]
 	defaultBranch = main
 [core]
