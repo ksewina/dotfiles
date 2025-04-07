@@ -1,3 +1,11 @@
+# To avoid duplicates in your $PATH, you can utilize zsh's array features:
+# typeset -aU path: This ensures that the path array (which mirrors the $PATH
+# environment variable) only contains unique elements.
+typeset -aU path # Makes PATH elements unique (zsh only)
+path+=($HOME/.local/bin $HOME/scripts)
+export PATH
+
+#zmodload zsh/zprof
 HISTSIZE=5000
 SAVEHIST=${HISTSIZE}
 HISTFILE=~/.zsh_history
@@ -95,15 +103,13 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
-# FZF
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+# optional fzf settings
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_CTRL_R_OPTS="--sort --exact"
 
-#binaries
-export PATH="$PATH:$HOME/.local/bin"
-
 # Source aliases if file exists
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
+
+#zprof
