@@ -2,7 +2,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = nvim
+	editor = vim
 	pager = less
 	# global ignore file
 	excludefile = ~/.gitignore
@@ -56,3 +56,6 @@
 	helper = /usr/bin/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[user]
+	email = 17175236+ksewina@users.noreply.github.com
+	name = ksewina
