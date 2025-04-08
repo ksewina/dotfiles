@@ -84,16 +84,27 @@ zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys
 bindkey -v
 
 # Load vcs_info for git branch display
-autoload -Uz vcs_info
+autoload -Uz add-zsh-hook vcs_info
 precmd() { vcs_info }
 
-# Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats ' %F{green}(%b)%f'
-zstyle ':vcs_info:*' enable git
+setopt prompt_subst #set prompt substitution to use the vcs_info_message variable
 
-# Set up the prompt
-setopt PROMPT_SUBST
-PROMPT='%F{magenta}%~%f${vcs_info_msg_0_} %F{yellow}%#%f '
+# Run the `vcs_info` hook to grab git info before displaying the prompt
+add-zsh-hook precmd vcs_info
+
+# Style the vcs_info message
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git*' formats '%b%u%c'
+# Format when the repo is in an action (merge, rebase, etc)
+zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
+zstyle ':vcs_info:git*' unstagedstr '(*)'
+zstyle ':vcs_info:git*' stagedstr '(+)'
+# This enables %u and %c (unstaged/staged changes) to work,
+# but can be slow on large repos
+zstyle ':vcs_info:*:*' check-for-changes true
+
+#PROMPT='%F{magenta}%~%f${vcs_info_msg_0_} %F{yellow}%#%f '
+PROMPT='%F{magenta}%~%f ${vcs_info_msg_0_} %F{yellow}%#%f '
 RPROMPT='%T'
 
 # Better completion system
