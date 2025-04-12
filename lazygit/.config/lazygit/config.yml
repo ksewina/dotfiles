@@ -2,53 +2,94 @@ gui:
   nerdFontsVersion: "3"
 
 # Theme
-theme:
-  background: "#282828"
-  foreground: "#ebdbb2"
-  cursor: "#c7c7c7"
-  black: "#1d2021"
-  red: "#cc241d"
-  green: "#98871a"
-  yellow: "#d79921"
-  blue: "#458588"
-  magenta: "#b16286"
-  cyan: "#689d6a"
-  white: "#c7c7c7"
-  brightBlack: "#676767"
-  brightRed: "#fb4934"
-  brightGreen: "#b8bb26"
-  brightYellow: "#fabd2f"
-  brightBlue: "#83a598"
-  brightMagenta: "#d3869b"
-  brightCyan: "#8ec07c"
-  brightWhite: "#f9f5d7"
+# theme:
+#   background: "#282828"
+#   foreground: "#ebdbb2"
+#   cursor: "#c7c7c7"
+#   black: "#1d2021"
+#   red: "#cc241d"
+#   green: "#98871a"
+#   yellow: "#d79921"
+#   blue: "#458588"
+#   magenta: "#b16286"
+#   cyan: "#689d6a"
+#   white: "#c7c7c7"
+#   brightBlack: "#676767"
+#   brightRed: "#fb4934"
+#   brightGreen: "#b8bb26"
+#   brightYellow: "#fabd2f"
+#   brightBlue: "#83a598"
+#   brightMagenta: "#d3869b"
+#   brightCyan: "#8ec07c"
+#   brightWhite: "#f9f5d7"
 
-
-  # theme:
-  #   activeBorderColor:
-  #     - "#fabd2f"  # Gruvbox yellow
-  #     - bold
-  #   inactiveBorderColor:
-  #     - "#a89984"  # Gruvbox gray
-  #   optionsTextColor:
-  #     - "#b8bb26"  # Gruvbox green
-  #   selectedLineBgColor:
-  #     - "#3c3836"  # Gruvbox dark gray
-  #   selectedRangeBgColor:
-  #     - "#504945"  # Gruvbox medium gray
-  #   cherryPickedCommitBgColor:
-  #     - "#8ec07c"  # Gruvbox light blue
-  #   cherryPickedCommitFgColor:
-  #     - "#282828"  # Gruvbox background
-  #   unstagedChangesColor:
-  #     - "#fb4934"  # Gruvbox red
-  #   defaultFgColor:
-  #     - "#ebdbb2"  # Gruvbox foreground
-  #   searchingActiveBorderColor:
-  #     - "#1d2021"  # Gruvbox orange
-  #   cmdFgColor:
-  #     - "#ebdbb2"  # Gruvbox foreground
-  #   mainPanelBorderColor:
-  #     - "#a89984"  # Gruvbox gray
-  #   mainPanelShadowColor:
-  #     - "#282828"  # Gruvbox background
+  theme:
+    activeBorderColor:
+      - "#fabd2f"  # bright_yellow
+      - bold
+    inactiveBorderColor:
+      - "#a89984"  # light4
+    optionsTextColor:
+      - "#b8bb26"  # bright_green
+    selectedLineBgColor:
+      - "#3c3836"  # dark1
+    selectedRangeBgColor:
+      - "#504945"  # dark2
+    cherryPickedCommitBgColor:
+      - "#8ec07c"  # bright_aqua
+    cherryPickedCommitFgColor:
+      - "#282828"  # dark0
+    unstagedChangesColor:
+      - "#fb4934"  # bright_red
+    defaultFgColor:
+      - "#ebdbb2"  # light1
+    searchingActiveBorderColor:
+      - "#fe8019"  # bright_orange
+    cmdFgColor:
+      - "#ebdbb2"  # light1
+    mainPanelBorderColor:
+      - "#a89984"  # light4
+    mainPanelShadowColor:
+      - "#282828"  # dark0
+    pullRequestBgColor:
+      - "#83a598"  # bright_blue
+    affectedFilesFgColor:
+      - "#fabd2f"  # bright_yellow
+    mergingBgColor:
+      - "#b16286"  # neutral_purple
+    caretColor:
+      - "#ebdbb2"  # light1
+    diffAddColor:
+      - "#b8bb26"  # bright_green
+    diffRemoveColor:
+      - "#fb4934"  # bright_red
+    diffModifColor:
+      - "#83a598"  # bright_blue
+    wordDiffAddColor:
+      - "#427b58"  # faded_aqua
+    wordDiffRemoveColor:
+      - "#9d0006"  # faded_red
+    informationColor:
+      - "#83a598"  # bright_blue
+    statusBarBgColor:
+      - "#282828"  # dark0
+    statusBarFgColor:
+      - "#ebdbb2"  # light1
+    markedLineBgColor:
+      - "#3c3836"  # dark1
+    branchAheadFgColor:
+      - "#b8bb26"  # bright_green
+    branchBehindFgColor:
+      - "#fb4934"  # bright_red
+    branchDivergedFgColor:
+      - "#fabd2f"  # bright_yellow
+    branchUpToDateFgColor:
+      - "#b8bb26"  # bright_green
+    warningColor:
+      - "#d79921"  # neutral_yellow
+    scrollBarPointerColor:
+      - "#a89984"  # light4
+    scrollBarBgColor:
+      - "#504945"  # dark2
+    commitTextColor:
+      - "#ebdbb2"  # light1
