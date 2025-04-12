@@ -3,22 +3,52 @@ gui:
 
 # Theme
 theme:
-  background: "#fc4384"
-  foreground: "#dddad6"
+  background: "#282828"
+  foreground: "#ebdbb2"
   cursor: "#c7c7c7"
-  black: "#7a7a7a"
-  red: "#fc4384"
-  green: "#b3e33b"
-  yellow: "#ffa727"
-  blue: "#102895"
-  magenta: "#c930c7"
-  cyan: "#00c5c7"
+  black: "#1d2021"
+  red: "#cc241d"
+  green: "#98871a"
+  yellow: "#d79921"
+  blue: "#458588"
+  magenta: "#b16286"
+  cyan: "#689d6a"
   white: "#c7c7c7"
   brightBlack: "#676767"
-  brightRed: "#ff7fac"
-  brightGreen: "#c8ed71"
-  brightYellow: "#ebdf86"
-  brightBlue: "#6871ff"
-  brightMagenta: "#ff76ff"
-  brightCyan: "#5ffdff"
-  brightWhite: "#fffefe"
+  brightRed: "#fb4934"
+  brightGreen: "#b8bb26"
+  brightYellow: "#fabd2f"
+  brightBlue: "#83a598"
+  brightMagenta: "#d3869b"
+  brightCyan: "#8ec07c"
+  brightWhite: "#f9f5d7"
+
+
+  # theme:
+  #   activeBorderColor:
+  #     - "#fabd2f"  # Gruvbox yellow
+  #     - bold
+  #   inactiveBorderColor:
+  #     - "#a89984"  # Gruvbox gray
+  #   optionsTextColor:
+  #     - "#b8bb26"  # Gruvbox green
+  #   selectedLineBgColor:
+  #     - "#3c3836"  # Gruvbox dark gray
+  #   selectedRangeBgColor:
+  #     - "#504945"  # Gruvbox medium gray
+  #   cherryPickedCommitBgColor:
+  #     - "#8ec07c"  # Gruvbox light blue
+  #   cherryPickedCommitFgColor:
+  #     - "#282828"  # Gruvbox background
+  #   unstagedChangesColor:
+  #     - "#fb4934"  # Gruvbox red
+  #   defaultFgColor:
+  #     - "#ebdbb2"  # Gruvbox foreground
+  #   searchingActiveBorderColor:
+  #     - "#1d2021"  # Gruvbox orange
+  #   cmdFgColor:
+  #     - "#ebdbb2"  # Gruvbox foreground
+  #   mainPanelBorderColor:
+  #     - "#a89984"  # Gruvbox gray
+  #   mainPanelShadowColor:
+  #     - "#282828"  # Gruvbox background
