@@ -1,18 +1,32 @@
 # To avoid duplicates in your $PATH, you can utilize zsh's array features:
 # typeset -aU path: This ensures that the path array (which mirrors the $PATH
 # environment variable) only contains unique elements.
+
+# zprof
+# debug zsh startup time, will load zprof mod and display what your shell was doing at initialization.
+# time zsh -i -c exit, this shoud be aiased to zshdebugrc
+
+if [[ -n "$ZSH_DEBUGRC" ]]; then
+  zmodload zsh/zprof
+fi
+
 typeset -aU path # Makes PATH elements unique (zsh only)
 path+=($HOME/.local/bin $HOME/scripts)
 export PATH
 
 #zmodload zsh/zprof
-HISTSIZE=5000
+HISTSIZE=10000
 SAVEHIST=${HISTSIZE}
 HISTFILE=~/.zsh_history
+#erase dupicate entries from history
 HISTDUP=erase
 
-#want to see all options available:
-#emulate -lLR zsh
+# manually set this
+EDITOR=vim
+PAGER=less
+
+# want to see all options available:
+# emulate -lLR zsh
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
@@ -72,8 +86,12 @@ setopt check_running_jobs # Warn about background jobs on exit.
 setopt local_loops # Do not allow `break` etc. outside of loops.
 
 # ZLE
-# setopt zle # Use ZLE.
-# setopt no_beep # Do not beep on ZLE errors (most beeps).
+setopt zle # Use ZLE.
+setopt no_beep # Do not beep on ZLE errors (most beeps).
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
 
 autoload -Uz compinit
 compinit -u
@@ -81,7 +99,9 @@ compinit -u
 zstyle ':completion:*' use-cache true # Cache completion to `${ZDOTDIR}/.zcompcache`.
 zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys.
 
-bindkey -v
+# emacs mode
+# essential to use readline features with zle
+bindkey -e
 
 # Load vcs_info for git branch display
 autoload -Uz add-zsh-hook vcs_info
@@ -119,8 +139,16 @@ source <(fzf --zsh)
 # optional fzf settings
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_CTRL_R_OPTS="--sort --exact"
+# navi
+eval "$(navi widget zsh)"
+
+# Podman
+source <(podman completion zsh)
 
 # Source aliases if file exists
 [[ -f $HOME/.aliases ]] && source $HOME/.aliases
 
-#zprof
+# always at end
+if [[ -n "$ZSH_DEBUGRC" ]]; then
+  zprof
+fi
