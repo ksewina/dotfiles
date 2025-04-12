@@ -1,0 +1,4 @@
+# stow has an ignore list, this overwrites the behaviour for this module
+# verify with stow -v9 gitconfig
+# Ignore list regexp for segments: /(?^:^(\.git|.+~|\.gitmodules|_darcs|\.hg|\.gitignore|\.#.+|\.svn|RCS|#.*#|CVS|\.cvsignore|.+,v)$)/
+!^\.gitignore$
