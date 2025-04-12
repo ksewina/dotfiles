@@ -1,0 +1,135 @@
+#!/usr/bin/env sh
+
+# https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f 
+
+# Check if Homebrew is installed
+if ! command -v brew &> /dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Updating Homebrew..."
+  brew update
+fi
+
+echo "------- Setting Up Applications, dependencies, and dotfiles -------"
+
+# homebrew installations
+echo "Installing applications and tools from Brewfile..."
+brew bundle --file=- <<EOF || { echo "Error during brew bundle. Some packages may not have installed properly."; }
+
+  # Taps
+  tap "jesseduffield/lazygit"
+  tap "hashicorp/tap"
+  tap "localsend/localsend"
+
+  # Browsers
+  cask "brave-browser"
+  cask "google-chrome"
+  
+  # Development tools
+  cask "visual-studio-code"
+  cask "alacritty"
+  cask "podman-desktop"
+  
+  # Kubernetes and Infrastructure
+  brew "podman"
+  brew "podman-compose"
+  brew "kubernetes-cli@1.31"
+  brew "openshift-cli"
+  brew "helm"
+  brew "k9s"
+  brew "terraform"
+  # brew "ansible"
+  brew "cilium-cli"
+  brew "sops"
+  
+  # CLI Tools and Utilities
+  brew "jq"
+  brew "go"
+  brew "direnv"
+  brew "fzf"
+  brew "gnupg"
+  #brew "lazygit" # throwing errors for override
+  brew "lazydocker"
+  brew "tmux"
+  brew "zsh-autosuggestions"
+  brew "ttygif"
+  brew "brotli"
+  brew "ffmpeg"
+  
+  # Editors and Terminal
+  brew "ncurses"
+  brew "neovim"
+  brew "readline"
+  
+  # Visualization and Diagramming
+  brew "graphviz"
+  
+  # Applications
+  cask "obsidian"
+  cask "bitwarden"
+  cask "balenaetcher"
+  cask "slack"
+  cask "teamviewer"
+  cask "localsend"
+  cask "deezer"
+  cask "vlc"
+  cask "tomatobar"
+  cask "stolendata-mpv"
+  cask "karabiner-elements"
+
+  # Fonts
+  cask "font-source-code-pro"
+  cask "font-jetbrains-mono-nerd-font"
+  cask "font-sauce-code-pro-nerd-font"
+
+  # Additional CLI Tools
+  brew "ripgrep"        # Better grep
+  brew "bat"            # Better cat
+  brew "eza"            # Better ls
+  brew "fd"             # Faster alternative to find
+  brew "htop"           # Better top
+  brew "shellcheck"     # Shell script linter
+  brew "delta"          # Better git diff
+  
+  # Development Tools
+  brew "python"		  # Python
+  brew "pipx"		  # manage python environments
+  # brew "node"           # Node.js
+  # brew "yarn"           # Package manager
+  # brew "mise"           # Dev tool version manager (replacement for asdf)
+  # brew "postgresql"     # PostgreSQL database
+  
+  # Additional Utilities
+  # brew "tig"            # Text-mode interface for git
+  # brew "hyperfine"      # Benchmarking tool
+  # brew "yq"             # YAML processor (like jq)
+  # brew "mas"            # Mac App Store CLI
+  # brew "podman"         # Docker alternative
+  
+  # Additional Applications
+  # cask "rectangle"      # Window manager
+  # cask "iterm2"         # Terminal emulator
+
+EOF
+
+  # SUGGESTED ADDITIONAL TOOLS (UNCOMMENT AS NEEDED)
+  
+# Bring in or pull from dotfiles
+echo "Setting up dotfiles..."
+if [ ! -d "$HOME/dotfiles" ]; then
+  git clone https://github.com/ksewina/dotfiles.git ~/dotfiles || echo "Failed to clone dotfiles repository."
+else
+  git -C ~/dotfiles pull origin master || echo "Failed to update dotfiles repository."
+fi
+
+# Maintenance and cleanup
+# brew cleanup
+# brew doctor
+
+echo 'source ~/.zshrc' | pbcopy
+
+echo "------- Installation Complete -------"
+echo "You may need to restart your terminal or run 'source ~/.zshrc' (or your shell's config file) to apply all changes."
+echo "The command 'source ~/.zshrc' has been copied to your clipboard."
+echo "Paste it in your terminal to reload your shell configuration."
