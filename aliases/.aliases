@@ -1,13 +1,14 @@
 
 alias z='zsh' 
-alias v='lvim'
-alias lv='lvim'
+alias v='nvim'
 alias python='python3'
 alias lg='lazygit'
 
+alias econfig='$EDITOR $HOME/dotfiles/'
+
 #alias ls='ls --human-readable --classify --group-directories-first --color=auto'
-#alias ll='ls -alt'
-#alias la='ls --almost-all'
+alias ll='ls -l'
+alias la='ls -a'
 
 #basic cd controls
 
@@ -27,6 +28,11 @@ alias fgrep='fgrep --color=auto'
 
 alias mkdir='mkdir -pv'
 alias dirsize='du -sh * | sort -hr'
+
+#ZSH
+
+alias zshdebugrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
+
 
 # KUBERNETES
 #
