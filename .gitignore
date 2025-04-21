@@ -1,3 +1,4 @@
 watch_later*
 .DS_Store
 **lazy-lock.json
+*.log
