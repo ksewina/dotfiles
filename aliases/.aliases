@@ -33,6 +33,7 @@ alias dirsize='du -sh * | sort -hr'
 
 alias zshdebugrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
 
+alias tf='terraform'
 
 # KUBERNETES
 #
