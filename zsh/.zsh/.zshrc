@@ -89,6 +89,8 @@ setopt local_loops # Do not allow `break` etc. outside of loops.
 setopt zle # Use ZLE.
 setopt no_beep # Do not beep on ZLE errors (most beeps).
 
+# Edit the current command with your favorite editor
+# part of zshcontrib
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
@@ -96,6 +98,9 @@ bindkey '^X^E' edit-command-line
 autoload -Uz compinit
 compinit -u
 
+
+#man zshcompsys
+zstyle ':completion:*' verbose yes
 zstyle ':completion:*' use-cache true # Cache completion to `${ZDOTDIR}/.zcompcache`.
 zstyle ':completion:*' menu 'select' # Make the menu interactive with arrow keys.
 
@@ -139,8 +144,15 @@ source <(fzf --zsh)
 # optional fzf settings
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_CTRL_R_OPTS="--sort --exact"
+
 # navi
 eval "$(navi widget zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# pipx
+eval "$(register-python-argcomplete pipx)"
 
 # Podman
 source <(podman completion zsh)
