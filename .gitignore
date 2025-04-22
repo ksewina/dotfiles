@@ -1,4 +1,7 @@
 watch_later*
 .DS_Store
 **lazy-lock.json
+.zcompdump
+*.swp
 *.log
+.vscode
