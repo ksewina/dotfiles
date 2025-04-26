@@ -145,14 +145,8 @@ source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_CTRL_R_OPTS="--sort --exact"
 
-# navi
-eval "$(navi widget zsh)"
-
 # direnv
 eval "$(direnv hook zsh)"
-
-# pipx
-eval "$(register-python-argcomplete pipx)"
 
 # Podman
 source <(podman completion zsh)
