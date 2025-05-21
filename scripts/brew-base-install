@@ -44,6 +44,7 @@ brew bundle --file=- <<EOF || { echo "Error during brew bundle. Some packages ma
   brew "sops"
   
   # CLI Tools and Utilities
+  brew "mas"
   brew "jq"
   brew "go"
   brew "direnv"
