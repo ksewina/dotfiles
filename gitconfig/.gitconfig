@@ -35,7 +35,7 @@
 	pruneTags = true
 	all = true
 [help]  
-	autocororect = prompt
+	autocorrect = prompt
 [commit]
 	# diffs visible when typing commits, so nice
 	verbose = true

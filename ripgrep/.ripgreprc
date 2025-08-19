@@ -1,0 +1,28 @@
+# ripgrep configuration
+# https://github.com/BurntSushi/ripgrep
+
+# Follow symbolic links
+--follow
+
+# Search case insensitively if the pattern is all lowercase
+--smart-case
+
+# Sort results by file path
+--sort=path
+
+# Add custom file types
+--type-add=web:*.{html,css,js,jsx,ts,tsx,vue,svelte}
+--type-add=config:*.{json,yaml,yml,toml,ini,conf}
+
+# Ignore common directories
+--glob=!.git/
+--glob=!node_modules/
+--glob=!target/
+--glob=!build/
+--glob=!dist/
+--glob=!.next/
+--glob=!coverage/
+--glob=!*.lock
+
+# Show context lines
+--context=1

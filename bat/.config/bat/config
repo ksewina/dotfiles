@@ -1,0 +1,20 @@
+# bat configuration
+# https://github.com/sharkdp/bat
+
+# Set the theme to use for syntax highlighting
+--theme="gruvbox-dark"
+
+# Show line numbers, Git modifications and file header (but no grid)
+--style="numbers,changes,header"
+
+# Use italic text on the terminal (not supported on all terminals)
+--italic-text=always
+
+# Add mouse scrolling support in less (does not work with older versions of "less")
+--pager="less -RF"
+
+# Use C++ syntax for .ino files
+--map-syntax "*.ino:C++"
+
+# Use "gitignore" highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"
