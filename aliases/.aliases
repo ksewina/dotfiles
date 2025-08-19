@@ -35,6 +35,8 @@ alias zshdebugrc='time ZSH_DEBUGRC=1 zsh -i -c exit'
 
 alias tf='terraform'
 
+alias butane='podman run --rm --interactive --security-opt label=disable --volume "${PWD}:/pwd" --workdir /pwd quay.io/coreos/butane:release'
+
 # KUBERNETES
 #
 # This command is used a LOT both below and in daily life

@@ -39,6 +39,7 @@ brew bundle --file=- <<EOF || { echo "Error during brew bundle. Some packages ma
   brew "helm"
   brew "k9s"
   brew "terraform"
+  # better to just use python3 pip
   # brew "ansible"
   brew "cilium-cli"
   brew "sops"
@@ -78,6 +79,7 @@ brew bundle --file=- <<EOF || { echo "Error during brew bundle. Some packages ma
   cask "tomatobar"
   cask "stolendata-mpv"
   cask "karabiner-elements"
+  cask "onyx"
 
   # Fonts
   cask "font-source-code-pro"
@@ -128,9 +130,9 @@ fi
 # brew cleanup
 # brew doctor
 
-echo 'source ~/.zshrc' | pbcopy
+echo 'source $ZDOTDIR/.zshrc' | pbcopy
 
 echo "------- Installation Complete -------"
 echo "You may need to restart your terminal or run 'source ~/.zshrc' (or your shell's config file) to apply all changes."
-echo "The command 'source ~/.zshrc' has been copied to your clipboard."
+echo "The command 'source $ZDOTDIR/.zshrc' has been copied to your clipboard."
 echo "Paste it in your terminal to reload your shell configuration."

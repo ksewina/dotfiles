@@ -243,12 +243,25 @@ require("lazy").setup({
         capabilities = capabilities,
         settings = {
           yaml = {
+            schemaStore = {
+              enable = true,
+              url = "https://www.schemastore.org/api/json/catalog.json",
+            },
             schemas = {
               ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
               ["https://json.schemastore.org/kustomization.json"] = "kustomization.yaml",
               ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.yml",
               ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] = "*playbook*.yml",
+              ["https://json.schemastore.org/prometheus.json"] = "**/prometheus*.yml",
+              ["https://json.schemastore.org/grafana-dashboard.json"] = "**/grafana-dashboard*.json",
             },
+            validate = true,
+            completion = true,
+            hover = true,
+            format = {
+              enable = true,
+              singleQuote = false,
+              bracketSpacing = true,
           },
         },
       })
