@@ -88,10 +88,10 @@ require("lazy").setup({
       "TmuxNavigatePrevious",
     },
     keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
@@ -130,7 +130,7 @@ require("lazy").setup({
     config = function()
       local telescope = require("telescope")
       local builtin = require("telescope.builtin")
-      
+
       telescope.setup({
         defaults = {
           mappings = {
@@ -142,7 +142,7 @@ require("lazy").setup({
           },
         },
       })
-      
+
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
@@ -225,7 +225,7 @@ require("lazy").setup({
 
       -- LSP servers
       local lspconfig = require("lspconfig")
-      
+
       -- Lua
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -250,8 +250,10 @@ require("lazy").setup({
             schemas = {
               ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
               ["https://json.schemastore.org/kustomization.json"] = "kustomization.yaml",
-              ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.yml",
-              ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] = "*playbook*.yml",
+              ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
+              "*docker-compose*.yml",
+              ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json"] =
+              "*playbook*.yml",
               ["https://json.schemastore.org/prometheus.json"] = "**/prometheus*.yml",
               ["https://json.schemastore.org/grafana-dashboard.json"] = "**/grafana-dashboard*.json",
             },
@@ -262,8 +264,9 @@ require("lazy").setup({
               enable = true,
               singleQuote = false,
               bracketSpacing = true,
+            },
           },
-        },
+        }
       })
 
       -- Go
@@ -282,13 +285,13 @@ require("lazy").setup({
 
       -- Bash
       lspconfig.bashls.setup({ capabilities = capabilities })
-      
+
       -- JSON
       lspconfig.jsonls.setup({ capabilities = capabilities })
-      
+
       -- Python
       lspconfig.pyright.setup({ capabilities = capabilities })
-      
+
       -- Markdown
       lspconfig.marksman.setup({ capabilities = capabilities })
 

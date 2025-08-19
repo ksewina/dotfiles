@@ -1,5 +1,6 @@
 # Simple but Feature-Rich Neovim Setup
-
+# this is mostly AI generated based on my previous setups merged together.
+# todo: full review check if anything does not work as expected
 A clean, modern Neovim configuration using lazy.nvim that focuses on simplicity without sacrificing functionality.
 
 ## Features
