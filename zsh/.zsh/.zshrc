@@ -18,22 +18,13 @@ export PATH
 HISTSIZE=10000
 SAVEHIST=${HISTSIZE}
 HISTFILE=~/.zsh_history
-#erase dupicate entries from history
-HISTDUP=erase
 
 # manually set this
-EDITOR=vim
+EDITOR=nivm
 PAGER=less
 
 # want to see all options available:
 # emulate -lLR zsh
-setopt appendhistory
-setopt sharehistory
-setopt incappendhistory
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
 
 # Enable colors
 autoload -U colors && colors
@@ -64,8 +55,10 @@ setopt mark_dirs # Mark directories resulting from globs with trailing slashes.
 # setopt nomatch # If a glob fails, the command isn't executed.
 
 # History
+setopt sharehistory
 setopt hist_ignore_all_dups # Ignore all duplicates when writing history.
 setopt hist_ignore_space # Ignore commands that begin with spaces.
+setopt hist_save_no_dups
 setopt inc_append_history # Write commands to history file as soon as possible.
 
 # Input/Output
@@ -98,6 +91,7 @@ bindkey '^X^E' edit-command-line
 autoload -Uz compinit
 compinit -u
 
+compinit -C
 
 #man zshcompsys
 zstyle ':completion:*' verbose yes
@@ -112,7 +106,26 @@ bindkey -e
 autoload -Uz add-zsh-hook vcs_info
 precmd() { vcs_info }
 
+# https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+#
 setopt prompt_subst #set prompt substitution to use the vcs_info_message variable
+
+# similar to the omz / fish truncation
+prompt_truncate_path() {
+    local path_parts=("${(@s:/:)PWD}")
+    local result=""
+    
+    if [[ ${#path_parts} -le 4 ]]; then
+        echo "%~"
+    else
+        result="/"
+        for ((i=2; i<=${#path_parts}-3; i++)); do
+            result+="${path_parts[i][1,5]}/"
+        done
+        result+="${path_parts[-3]}/${path_parts[-2]}/${path_parts[-1]}"
+        echo "$result"
+    fi
+}
 
 # Run the `vcs_info` hook to grab git info before displaying the prompt
 add-zsh-hook precmd vcs_info
@@ -126,10 +139,14 @@ zstyle ':vcs_info:git*' unstagedstr '(*)'
 zstyle ':vcs_info:git*' stagedstr '(+)'
 # This enables %u and %c (unstaged/staged changes) to work,
 # but can be slow on large repos
-zstyle ':vcs_info:*:*' check-for-changes true
 
+# various ways to truncate long paths, I use the script for now, review again when I read this.
+#
 #PROMPT='%F{magenta}%~%f${vcs_info_msg_0_} %F{yellow}%#%f '
-PROMPT='%F{magenta}%~%f ${vcs_info_msg_0_} %F{yellow}%#%f '
+#PROMPT='%F{magenta}%(5~|.../%3~|%~)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
+#PROMPT='%F{magenta}%(5~|${${${(@j:/:)${(@s:/:)PWD}[1,2]}:h}/*/}${PWD:t2}|%~)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
+#
+PROMPT='%F{magenta}$(prompt_truncate_path)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
 RPROMPT='%T'
 
 # Better completion system
@@ -142,8 +159,19 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 # optional fzf settings
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-export FZF_CTRL_R_OPTS="--sort --exact"
+export FZF_DEFAULT_OPTS="
+  --height 40% 
+  --layout=reverse 
+  --border
+"
+export FZF_CTRL_R_OPTS="
+  --sort 
+  --exact
+"
+# popup support in tmux
+export FZF_TMUX_OPTS="
+  -p
+"
 
 # direnv
 eval "$(direnv hook zsh)"
