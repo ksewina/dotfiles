@@ -143,10 +143,10 @@ zstyle ':vcs_info:git*' stagedstr '(+)'
 # various ways to truncate long paths, I use the script for now, review again when I read this.
 #
 #PROMPT='%F{magenta}%~%f${vcs_info_msg_0_} %F{yellow}%#%f '
-#PROMPT='%F{magenta}%(5~|.../%3~|%~)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
+PROMPT='%F{magenta}%(5~|.../%3~|%~)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
 #PROMPT='%F{magenta}%(5~|${${${(@j:/:)${(@s:/:)PWD}[1,2]}:h}/*/}${PWD:t2}|%~)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
 #
-PROMPT='%F{magenta}$(prompt_truncate_path)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
+#PROMPT='%F{magenta}$(prompt_truncate_path)%f ${vcs_info_msg_0_} %F{yellow}%#%f '
 RPROMPT='%T'
 
 # Better completion system
