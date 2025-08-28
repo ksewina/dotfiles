@@ -1,0 +1,198 @@
+/*
+ * Gruvbox Dark theme for Rofi
+ * Based on the Gruvbox color scheme
+ */
+
+* {
+    /* Gruvbox Dark colors */
+    gruvbox-dark-bg0:          #282828;
+    gruvbox-dark-bg1:          #3c3836;
+    gruvbox-dark-bg2:          #504945;
+    gruvbox-dark-bg3:          #665c54;
+    gruvbox-dark-fg0:          #fbf1c7;
+    gruvbox-dark-fg1:          #ebdbb2;
+    gruvbox-dark-fg2:          #d5c4a1;
+    gruvbox-dark-fg3:          #bdae93;
+    gruvbox-dark-fg4:          #a89984;
+    gruvbox-dark-red-dark:     #cc241d;
+    gruvbox-dark-red-light:    #fb4934;
+    gruvbox-dark-green-dark:   #98971a;
+    gruvbox-dark-green-light:  #b8bb26;
+    gruvbox-dark-yellow-dark:  #d79921;
+    gruvbox-dark-yellow-light: #fabd2f;
+    gruvbox-dark-blue-dark:    #458588;
+    gruvbox-dark-blue-light:   #83a598;
+    gruvbox-dark-purple-dark:  #b16286;
+    gruvbox-dark-purple-light: #d3869b;
+    gruvbox-dark-aqua-dark:    #689d6a;
+    gruvbox-dark-aqua-light:   #8ec07c;
+    gruvbox-dark-orange-dark:  #d65d0e;
+    gruvbox-dark-orange-light: #fe8019;
+    gruvbox-dark-gray:         #928374;
+
+    /* Theme settings */
+    background:                @gruvbox-dark-bg0;
+    background-color:          transparent;
+    foreground:                @gruvbox-dark-fg1;
+    border-color:              @gruvbox-dark-orange-dark;
+    separatorcolor:            @gruvbox-dark-bg2;
+    scrollbar-handle:          @gruvbox-dark-bg3;
+
+    normal-background:         transparent;
+    normal-foreground:         @foreground;
+    alternate-normal-background: @gruvbox-dark-bg1;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @gruvbox-dark-orange-dark;
+    selected-normal-foreground:  @gruvbox-dark-bg0;
+
+    active-background:         @gruvbox-dark-green-dark;
+    active-foreground:         @gruvbox-dark-bg0;
+    alternate-active-background: @gruvbox-dark-green-dark;
+    alternate-active-foreground: @gruvbox-dark-bg0;
+    selected-active-background:  @gruvbox-dark-yellow-dark;
+    selected-active-foreground:  @gruvbox-dark-bg0;
+
+    urgent-background:         @gruvbox-dark-red-dark;
+    urgent-foreground:         @gruvbox-dark-bg0;
+    alternate-urgent-background: @gruvbox-dark-red-dark;
+    alternate-urgent-foreground: @gruvbox-dark-bg0;
+    selected-urgent-background:  @gruvbox-dark-red-light;
+    selected-urgent-foreground:  @gruvbox-dark-bg0;
+}
+
+window {
+    background-color: @background;
+    border:           2px;
+    border-color:     @border-color;
+    border-radius:    8px;
+    padding:          20px;
+    width:            800px;
+    location:         center;
+    anchor:           center;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+    padding:      10px;
+}
+
+textbox {
+    highlight: @gruvbox-dark-yellow-light;
+    text-color: @foreground;
+}
+
+listview {
+    border:       2px solid 0 0;
+    padding:      10px 0 0;
+    border-color: @separatorcolor;
+    spacing:      2px;
+    scrollbar:    true;
+    lines:        10;
+}
+
+element {
+    border:  0;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+element normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+scrollbar {
+    width:        4px;
+    border:       0;
+    handle-color: @scrollbar-handle;
+    handle-width: 8px;
+    padding:      0;
+}
+
+sidebar {
+    border:       2px 0 0;
+    border-color: @separatorcolor;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @normal-foreground;
+    padding:    2px;
+    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+}
+
+case-indicator,
+entry,
+prompt,
+button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+textbox-prompt-sep {
+    expand:     false;
+    str:        ":";
+    text-color: @gruvbox-dark-orange-dark;
+    margin:     0 0.3em 0 0;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    size: 1.2em;
+    margin: 0 0.5em 0 0;
+}

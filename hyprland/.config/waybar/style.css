@@ -1,0 +1,29 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  /* padding: 4px 8px; */
+}
+
+/* Transparent module containers */
+.modules-left, .modules-center, .modules-right {
+  background: rgba(146,131,116,0.8);
+  border-radius: 16px;
+  margin: 4px;
+  padding: 4px;
+}
+
+.network {
+  padding: 10px;
+}
+
+#bluetooth {
+  padding: 10px;
+}

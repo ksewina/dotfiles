@@ -1,0 +1,39 @@
+/*
+ * Rofi configuration with Gruvbox Dark theme
+ * Optimized for ultrawide displays
+ */
+
+configuration {
+    modi: "drun,run,window,ssh,combi";
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "";
+    display-run: "";
+    display-window: "";
+    display-ssh: "";
+    display-combi: "";
+    terminal: "alacritty";
+    ssh-client: "ssh";
+    ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
+    run-command: "{cmd}";
+    run-list-command: "";
+    run-shell-command: "{terminal} -e {cmd}";
+    window-command: "wmctrl -i -R {window}";
+    window-match-fields: "all";
+    combi-modi: "window,drun,ssh";
+    matching: "fuzzy";
+    sort: true;
+    threads: 0;
+    scroll-method: 0;
+    disable-history: false;
+    fullscreen: false;
+    fake-transparency: false;
+    window-format: "{w}    {c}   {t}";
+    click-to-exit: true;
+    max-history-size: 25;
+    kb-primary-paste: "Control+V,Shift+Insert";
+    kb-secondary-paste: "Control+v,Insert";
+}
+
+@theme "gruvbox-dark"
