@@ -20,7 +20,7 @@ SAVEHIST=${HISTSIZE}
 HISTFILE=~/.zsh_history
 
 # manually set this
-EDITOR=nivm
+EDITOR=nvim
 PAGER=less
 
 # want to see all options available:

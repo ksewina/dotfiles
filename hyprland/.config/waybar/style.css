@@ -15,7 +15,7 @@ window#waybar {
 /* Transparent module containers */
 .modules-left, .modules-center, .modules-right {
   background: rgba(146,131,116,0.8);
-  border-radius: 16px;
+  border-radius: 10px;
   margin: 4px;
   padding: 4px;
 }
