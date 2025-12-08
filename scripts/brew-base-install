@@ -34,6 +34,7 @@ brew bundle --file=- <<EOF || { echo "Error during brew bundle. Some packages ma
   # Kubernetes and Infrastructure
   brew "podman"
   brew "podman-compose"
+  brew "kompose"
   brew "kubernetes-cli@1.31"
   brew "openshift-cli"
   brew "helm"
