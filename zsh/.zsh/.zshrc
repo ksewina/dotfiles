@@ -1,14 +1,17 @@
 # To avoid duplicates in your $PATH, you can utilize zsh's array features:
 # typeset -aU path: This ensures that the path array (which mirrors the $PATH
 # environment variable) only contains unique elements.
+#
+# want to see all options available:
+# emulate -lLR zsh
 
 # zprof
 # debug zsh startup time, will load zprof mod and display what your shell was doing at initialization.
 # time zsh -i -c exit, this shoud be aiased to zshdebugrc
 
-if [[ -n "$ZSH_DEBUGRC" ]]; then
-  zmodload zsh/zprof
-fi
+# if [[ -n "$ZSH_DEBUGRC" ]]; then
+#   zmodload zsh/zprof
+# fi
 
 typeset -aU path # Makes PATH elements unique (zsh only)
 path+=($HOME/.local/bin $HOME/scripts)
@@ -22,9 +25,6 @@ HISTFILE=~/.zsh_history
 # manually set this
 EDITOR=nvim
 PAGER=less
-
-# want to see all options available:
-# emulate -lLR zsh
 
 # Enable colors
 autoload -U colors && colors
@@ -139,6 +139,7 @@ zstyle ':vcs_info:git*' unstagedstr '(*)'
 zstyle ':vcs_info:git*' stagedstr '(+)'
 # This enables %u and %c (unstaged/staged changes) to work,
 # but can be slow on large repos
+zstyle ':vcs_info:*' check-for-changes true 
 
 # various ways to truncate long paths, I use the script for now, review again when I read this.
 #
